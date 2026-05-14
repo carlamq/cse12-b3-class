@@ -35,7 +35,7 @@ public static class Algorithms {
     /// done the count is returned.
     /// </summary>
     /// <param name="size">the amount of work to do</param>
-    private static int Algorithm1(int size) {
+    private static int Algorithm1(int size) { //O(n) if size=1000 it do 1000 operations
         var count = 0;
         for (var i = 0; i < size; ++i)
             count += 1;
@@ -49,7 +49,7 @@ public static class Algorithms {
     /// done the count is returned.
     /// </summary>
     /// <param name="size">the amount of work to do</param>
-    private static int Algorithm2(int size) {
+    private static int Algorithm2(int size) { //O(n^2) if size=1000 it do 1,000,000 operations
         var count = 0;
         for (var i = 0; i < size; ++i)
         for (var j = 0; j < size; ++j)
@@ -64,7 +64,7 @@ public static class Algorithms {
     /// done the count is returned.
     /// </summary>
     /// <param name="size">the amount of work to do</param>
-    private static int Algorithm3(int size) {
+    private static int Algorithm3(int size) { //O(log n) go from the middle 
         var count = 0;
         var start = 0;
         var end = size - 1;

@@ -34,7 +34,7 @@ public static class Arrays
     {
         // TODO Problem 2 Start
         //1: Repeat the rotation amount times
-        for (int i = 0; 1 < amount; i++)
+        for (int i = 0; i < amount; i++)
         {
             //2: take the count of the indexs, take the last index in the list
             int lastIndex = data.Count - 1;

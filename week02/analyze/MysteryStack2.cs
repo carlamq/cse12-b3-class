@@ -1,6 +1,6 @@
 ﻿public static class MysteryStack2 {
     private static bool IsFloat(string text) {
-        return float.TryParse(text, out _);
+        return float.TryParse(text, out _);//convertir a 
     }
 
     public static float Run(string text) {
@@ -8,7 +8,7 @@
         foreach (var item in text.Split(' ')) {
             if (item == "+" || item == "-" || item == "*" || item == "/") {
                 if (stack.Count < 2)
-                    throw new ApplicationException("Invalid Case 1!");
+                    throw new ApplicationException("Invalid Case 1!"); //if there is not enough numbers in the stack
 
                 var op2 = stack.Pop();
                 var op1 = stack.Pop();
@@ -24,7 +24,7 @@
                 }
                 else {
                     if (op2 == 0)
-                        throw new ApplicationException("Invalid Case 2!");
+                        throw new ApplicationException("Invalid Case 2!"); //if you want divide by 0
 
                     res = op1 / op2;
                 }
@@ -37,12 +37,12 @@
             else if (item == "") {
             }
             else {
-                throw new ApplicationException("Invalid Case 3!");
+                throw new ApplicationException("Invalid Case 3!"); //if have another character 
             }
         }
 
         if (stack.Count != 1)
-            throw new ApplicationException("Invalid Case 4!");
+            throw new ApplicationException("Invalid Case 4!"); //when have not exacly a value, like many numbers and no enough operators
 
         return stack.Pop();
     }

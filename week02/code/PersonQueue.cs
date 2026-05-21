@@ -13,7 +13,7 @@ public class PersonQueue
     /// <param name="person">The person to add</param>
     public void Enqueue(Person person)
     {
-        _queue.Insert(0, person);
+        _queue.Add(person); //Insert(0, person) is not inserting the person al the end, it is in front, so we cant do FIFO
     }
 
     public Person Dequeue()

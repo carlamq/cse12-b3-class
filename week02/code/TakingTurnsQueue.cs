@@ -40,17 +40,27 @@ public class TakingTurnsQueue
         else
         {
             Person person = _people.Dequeue();
-            if (person.Turns > 1)
+
+            if (person.Turns <= 0)//CASE 1.- Turns<= 0 infinity turns, Enqueue
+            {
+                _people.Enqueue(person);
+            }
+            else if (person.Turns > 1) //Case 2.- Turns > 1, infinity turns -=1
             {
                 person.Turns -= 1;
                 _people.Enqueue(person);
             }
+            else
+            {
+                //do not got ot queue again Turns==1
+            }
+            
 
             return person;
         }
     }
 
-    public override string ToString()
+    public override string ToString()//present the queue as text
     {
         return _people.ToString();
     }

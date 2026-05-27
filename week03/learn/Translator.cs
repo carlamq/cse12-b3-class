@@ -24,7 +24,7 @@ public class Translator
     /// <returns>fixed array of divisors</returns>
     public void AddWord(string fromWord, string toWord)
     {
-        // ADD YOUR CODE HERE
+        _words[fromWord] = toWord; //myMao[key]=value is a put(key,value)
     }
 
     /// <summary>
@@ -35,6 +35,11 @@ public class Translator
     public string Translate(string fromWord)
     {
         // ADD YOUR CODE HERE
-        return "";
+        string newWord = "???"; //supone que no ha encuentra la traduccion por defecto
+        if(_words.ContainsKey(fromWord)) //`if the word is in the dictionary is translated
+        {
+            newWord = _words[fromWord];// if is there, translate de word
+        }
+        return newWord; // if not, returns ??? 
     }
 }
